@@ -75,29 +75,27 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
                       children: [
                         Transform(
                           transform: Matrix4.translationValues(0, 10, 0),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () {
-                                print("Added favorites");
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.5),
-                                      blurRadius: 8,
-                                      offset: Offset(0, 2),
-                                    ),
-                                  ],
-                                ),
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                  radius: 15,
-                                  child: Icon(
-                                    Icons.favorite_outline,
-                                    size: 20,
+                          child: InkWell(
+                            onTap: () {
+                              print("Added favorites");
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.5),
+                                    blurRadius: 8,
+                                    offset: Offset(0, 2),
                                   ),
+                                ],
+                              ),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 15,
+                                child: Icon(
+                                  Icons.favorite_outline,
+                                  size: 20,
                                 ),
                               ),
                             ),

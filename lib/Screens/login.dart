@@ -72,7 +72,9 @@ class _My_Login_ScreenState extends State<My_Login_Screen> {
                     Container(
                       width: double.infinity,
                       height: 200,
-                      // child: Image.asset(""),
+                      child: Image.asset(
+                        "assets/images/register.webp",
+                      ),
                     ),
                     const SizedBox(
                       height: 10.0,

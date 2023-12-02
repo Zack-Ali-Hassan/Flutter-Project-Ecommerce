@@ -45,9 +45,38 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
                   ),
                   const SizedBox(height: 18.0),
                   ListTile(
-                    leading: CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage("assets/images/usr4.jpg"),
+                    leading: InkWell(
+                      onTap: () {
+                        print("clicked....");
+                      },
+                      child: CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/images/usr4.jpg"),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Container(
+                                  width: 22,
+                                  height: 22,
+                                  decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.camera_alt,
+                                    size: 11,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     title: Text(
                       "Ahmed mohamed Hassan",

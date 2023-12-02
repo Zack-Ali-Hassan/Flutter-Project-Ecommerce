@@ -186,7 +186,7 @@ class _My_Cart_WidgetState extends State<My_Cart_Widget> {
               children: [
                 IconButton(
                   onPressed: () {
-                    print("Delete cart or ...");
+                    showPopupMenu(context);
                   },
                   icon: Icon(
                     Icons.more_vert,
@@ -205,5 +205,32 @@ class _My_Cart_WidgetState extends State<My_Cart_Widget> {
         ],
       ),
     );
+  }
+
+  void showPopupMenu(BuildContext context) {
+    showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(100, 100, 40, 0),
+      items: [
+        PopupMenuItem<String>(
+          value: 'add',
+          child: ListTile(
+            title: Text('Add to favorites'),
+          ),
+        ),
+        PopupMenuItem<String>(
+          value: 'delete',
+          child: ListTile(
+            title: Text('Delete from the list'),
+          ),
+        ),
+      ],
+    ).then((value) {
+      if (value == 'add') {
+        print('Add to favorites');
+      } else if (value == 'delete') {
+        print('Delete card');
+      }
+    });
   }
 }

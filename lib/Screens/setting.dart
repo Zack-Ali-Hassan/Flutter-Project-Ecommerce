@@ -1,3 +1,4 @@
+import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
 
 class My_Settings_Screen extends StatefulWidget {
@@ -112,7 +113,7 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                     decoration: InputDecoration(
                       filled: true,
                       border: InputBorder.none,
-                      labelText: 'Date of Birth',
+                      labelText: 'Gmail',
                       labelStyle: TextStyle(
                         color: Colors.grey,
                       ),
@@ -179,6 +180,37 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 35.0,
+                ),
+                Material(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(
+                    10.0,
+                  ),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(
+                      10.0,
+                    ),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_) {
+                        return My_First_Screen();
+                      }));
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 52,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(),
+                      child: Text(
+                        "LOG OUT",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

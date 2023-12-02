@@ -70,9 +70,9 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                     Container(
                       width: double.infinity,
                       height: 200,
-                      // child: Image.asset(
-                      //   "assets/images/register.webp",
-                      // ),
+                      child: Image.asset(
+                        "assets/images/register.webp",
+                      ),
                     ),
                     const SizedBox(
                       height: 10.0,
@@ -195,7 +195,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                           width: double.infinity,
                           height: 60,
                           decoration: BoxDecoration(
-                            color: Colors.black,
+                            color: Colors.red,
                             borderRadius: BorderRadius.circular(
                               10.0,
                             ),

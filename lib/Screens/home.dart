@@ -155,7 +155,7 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                           width: 15.0,
                         );
                       },
-                      itemCount: 10,
+                      itemCount: 6,
                     ),
                   )
                 ],

@@ -1,14 +1,14 @@
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 import 'package:flutter/material.dart';
 
-class My_Favorite_Screen extends StatefulWidget {
-  const My_Favorite_Screen({super.key});
+class My_Womens_Shoes_Screen extends StatefulWidget {
+  const My_Womens_Shoes_Screen({super.key});
 
   @override
-  State<My_Favorite_Screen> createState() => _My_Favorite_ScreenState();
+  State<My_Womens_Shoes_Screen> createState() => _My_Womens_Shoes_ScreenState();
 }
 
-class _My_Favorite_ScreenState extends State<My_Favorite_Screen> {
+class _My_Womens_Shoes_ScreenState extends State<My_Womens_Shoes_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +16,16 @@ class _My_Favorite_ScreenState extends State<My_Favorite_Screen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 22,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
@@ -46,7 +56,7 @@ class _My_Favorite_ScreenState extends State<My_Favorite_Screen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Favorites",
+                        "Women's Shoes",
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w600,
@@ -109,23 +119,23 @@ class _My_Favorite_ScreenState extends State<My_Favorite_Screen> {
                 ),
                 child: Column(
                   children: [
-                    My_Favorite_Widget(),
+                    My_Women_Shoes_Widget(),
                     const SizedBox(
                       height: 27.0,
                     ),
-                    My_Favorite_Widget(),
+                    My_Women_Shoes_Widget(),
                     const SizedBox(
                       height: 27.0,
                     ),
-                    My_Favorite_Widget(),
+                    My_Women_Shoes_Widget(),
                     const SizedBox(
                       height: 27.0,
                     ),
-                    My_Favorite_Widget(),
+                    My_Women_Shoes_Widget(),
                     const SizedBox(
                       height: 27.0,
                     ),
-                    My_Favorite_Widget(),
+                    My_Women_Shoes_Widget(),
                   ],
                 ),
               ),
