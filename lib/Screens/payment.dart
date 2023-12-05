@@ -53,7 +53,7 @@ class _My_Payment_ScreenState extends State<My_Payment_Screen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Your paayment cards",
+                      "Your payment cards",
                       style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w600,

@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BottomBar(),
+
       // home: My_First_Screen(),
     );
   }

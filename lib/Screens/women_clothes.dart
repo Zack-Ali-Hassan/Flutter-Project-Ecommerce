@@ -1,3 +1,4 @@
+import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,7 @@ class _My_Womens_Clothes_ScreenState extends State<My_Womens_Clothes_Screen> {
           IconButton(
             onPressed: () {},
             icon: Icon(
-              Icons.search,
+              Icons.shopping_bag,
               color: Colors.black,
             ),
           ),
@@ -120,29 +121,121 @@ class _My_Womens_Clothes_ScreenState extends State<My_Womens_Clothes_Screen> {
                 ),
                 child: Column(
                   children: [
-                    My_Women_Clothes_Widget(),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          6.0,
+                        ),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            blurRadius: 8,
+                            offset: Offset(
+                              1,
+                              1,
+                            ),
+                          ),
+                        ],
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          border: InputBorder.none,
+                          prefixIcon: Icon(
+                            Icons.search,
+                          ),
+                          labelText: 'Search Product',
+                          labelStyle: TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ),
                     const SizedBox(
                       height: 27.0,
                     ),
-                    My_Women_Clothes_Widget(),
-                    const SizedBox(
-                      height: 27.0,
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10.0,
+                        horizontal: 10.0,
+                      ),
+                      child: GridView.builder(
+                        cacheExtent: 280,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        // mainAxisAlignment: MainAxisAlignment.start,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 10,
+                          crossAxisSpacing: 10,
+                        ),
+                        itemCount: 4,
+                        itemBuilder: (context, index) {
+                          return My_Women_Clothes_Widget();
+                        },
+                      ),
                     ),
-                    My_Women_Clothes_Widget(),
-                    const SizedBox(
-                      height: 27.0,
-                    ),
-                    My_Women_Clothes_Widget(),
-                    const SizedBox(
-                      height: 27.0,
-                    ),
-                    My_Women_Clothes_Widget(),
+                    // const SizedBox(
+                    //   height: 27.0,
+                    // ),
+                    // My_Women_Clothes_Widget(),
+                    // const SizedBox(
+                    //   height: 27.0,
+                    // ),
+                    // My_Women_Clothes_Widget(),
+                    // const SizedBox(
+                    //   height: 27.0,
+                    // ),
+                    // My_Women_Clothes_Widget(),
+                    // const SizedBox(
+                    //   height: 27.0,
+                    // ),
+                    // My_Women_Clothes_Widget(),
+                    // const SizedBox(
+                    //   height: 30.0,
+                    // ),
                   ],
                 ),
               ),
             ],
           ),
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 10.0,
+          horizontal: 20.0,
+        ),
+        child: Material(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(
+            10.0,
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(
+              10.0,
+            ),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return My_Cart_Screen();
+              }));
+            },
+            child: Container(
+              width: double.infinity,
+              height: 48,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(),
+              child: Text(
+                "View Cart" + " \$300.00",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

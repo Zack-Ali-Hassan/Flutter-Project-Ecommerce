@@ -104,7 +104,7 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                                   height: 13.0,
                                 ),
                                 Text(
-                                  "3 Newbridge Counrt",
+                                  "Km4",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -113,7 +113,7 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                                   height: 5.0,
                                 ),
                                 Text(
-                                  "Km4, Hodan-Mogadishu, Somalia",
+                                  "Hodan-Mogadishu, Somalia",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -162,10 +162,10 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (_) {
-                              return My_Payment_Screen();
-                            }));
+                            // Navigator.push(context,
+                            //     MaterialPageRoute(builder: (_) {
+                            //   return My_Payment_Screen();
+                            // }));
                           },
                           child: Text(
                             "Change",
@@ -181,18 +181,20 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                     Row(
                       children: [
                         Container(
+                          alignment: Alignment.center,
                           width: 100,
                           height: 50,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                "https://e7.pngegg.com/pngimages/398/193/png-clipart-mastercard-credit-card-logo-payment-mastercard-text-orange.png",
-                              ),
-                            ),
                             borderRadius: BorderRadius.circular(
                               10.0,
+                            ),
+                          ),
+                          child: Text(
+                            "EVC plus",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
@@ -200,7 +202,7 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                           width: 20.0,
                         ),
                         Text(
-                          "*************" + "3775",
+                          "*712*619222352*126.5#",
                           style: TextStyle(
                             letterSpacing: 1.5,
                             fontSize: 17,
@@ -282,7 +284,7 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                           ),
                         ),
                         Text(
-                          "15\$",
+                          "1.5\$",
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
@@ -303,7 +305,7 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                           ),
                         ),
                         Text(
-                          "140\$",
+                          "126.5\$",
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
@@ -314,43 +316,88 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                   ],
                 ),
                 const SizedBox(height: 18.0),
-                Column(
-                  children: [
-                    Material(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(
-                        10.0,
-                      ),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(
-                          10.0,
+              ],
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(
+          left: 20.0,
+          right: 20.0,
+          bottom: 15.0,
+        ),
+        child: Material(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(
+            10.0,
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(
+              10.0,
+            ),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    actionsAlignment: MainAxisAlignment.center,
+                    backgroundColor: Colors.white,
+                    title: Text("Verify payment method"),
+                    alignment: Alignment.center,
+                    content: Text(
+                      "Are you sure you want to pay?",
+                    ),
+                    contentTextStyle: TextStyle(color: Colors.black),
+                    titleTextStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                    actions: [
+                      ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                            Colors.grey[700],
+                          ),
                         ),
-                        onTap: () {
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("NO"),
+                      ),
+                      ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                            Colors.red,
+                          ),
+                        ),
+                        onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (_) {
                             return My_Success_Screen();
                           }));
                         },
-                        child: Container(
-                          width: double.infinity,
-                          height: 52,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(),
-                          child: Text(
-                            "SUBMIT ORDER",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                        child: Text("YES"),
                       ),
-                    ),
-                  ],
+                    ],
+                  );
+                },
+              );
+            },
+            child: Container(
+              width: double.infinity,
+              height: 52,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(),
+              child: Text(
+                "SUBMIT ORDER",
+                style: TextStyle(
+                  color: Colors.white,
                 ),
-              ],
+              ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }

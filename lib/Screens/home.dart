@@ -1,6 +1,7 @@
 import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class My_Home_Screen extends StatefulWidget {
   const My_Home_Screen({super.key});
@@ -12,6 +13,77 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 58.0),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage(
+                      "assets/images/usr4.jpg",
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(
+                    "Ahmed Mukhtaar",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 17,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                bottom: 28.0,
+                left: 20.0,
+                right: 20.0,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Material(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(
+                      10.0,
+                    ),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(
+                        10.0,
+                      ),
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return My_First_Screen();
+                        }));
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 52,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(),
+                        child: Text(
+                          "LOG OUT",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: ListView(
           children: [
@@ -130,7 +202,12 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                         ],
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return My_New_Products_Screen();
+                          }));
+                        },
                         child: Text(
                           "view all",
                           style: TextStyle(
@@ -155,7 +232,7 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                           width: 15.0,
                         );
                       },
-                      itemCount: 6,
+                      itemCount: 5,
                     ),
                   )
                 ],

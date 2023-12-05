@@ -35,15 +35,6 @@ class _My_Categories_ScreenState extends State<My_Categories_Screen> {
             ),
           ),
           centerTitle: true,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-                color: Colors.black,
-              ),
-            ),
-          ],
           bottom: TabBar(
             indicatorColor: Colors.red,
             labelColor: Colors.black,

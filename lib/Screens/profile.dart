@@ -15,18 +15,21 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-                color: Colors.black,
-              ),
-            ),
-          ],
         ),
         body: ListView(
           children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+              ),
+              child: Text(
+                "My profile",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 10.0,
@@ -36,13 +39,6 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "My profile",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
                   const SizedBox(height: 18.0),
                   ListTile(
                     leading: InkWell(
@@ -92,6 +88,11 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
                   ),
                   Card(
                     child: ListTile(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return My_Order_Screen();
+                        }));
+                      },
                       title: Text(
                         "My orders",
                         style: TextStyle(
@@ -160,7 +161,7 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
                         ),
                       ),
                       subtitle: Text(
-                        "Visa **34",
+                        "Evc plus",
                         style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w400,

@@ -39,15 +39,17 @@ class Delivery_Methods_Widget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
+                alignment: Alignment.center,
                 width: 70,
                 height: 30,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                      "https://toppng.com/uploads/preview/fedex-logo-11530965326t3fisnyxki.png",
-                    ),
+                ),
+                child: Text(
+                  "BAJAAJ",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

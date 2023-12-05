@@ -2,14 +2,16 @@ import 'package:e_commerce_project_app/Screens/product_info.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-class Sales_New_Screen extends StatefulWidget {
-  const Sales_New_Screen({super.key});
+class New_Products_Screen_Widget extends StatefulWidget {
+  const New_Products_Screen_Widget({super.key});
 
   @override
-  State<Sales_New_Screen> createState() => _Sales_New_ScreenState();
+  State<New_Products_Screen_Widget> createState() =>
+      _New_Products_Screen_WidgetState();
 }
 
-class _Sales_New_ScreenState extends State<Sales_New_Screen> {
+class _New_Products_Screen_WidgetState
+    extends State<New_Products_Screen_Widget> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -24,7 +26,7 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
         },
         child: Container(
           width: 150,
-          height: 280,
+          height: 90,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20.0),
@@ -35,7 +37,7 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
             children: [
               Container(
                 width: double.infinity,
-                height: 180,
+                height: 120,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
@@ -110,31 +112,37 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                  left: 10.0,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 18.0,
                 ),
-                child: Text(
-                  "Evening Dress",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0, bottom: 18.0),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "15\$",
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.w600,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Evening Dress",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 13.0),
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "15\$",
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],

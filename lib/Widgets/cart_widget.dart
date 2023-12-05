@@ -8,6 +8,21 @@ class My_Cart_Widget extends StatefulWidget {
 }
 
 class _My_Cart_WidgetState extends State<My_Cart_Widget> {
+  int count = 1;
+  void increment() {
+    setState(() {
+      count++;
+    });
+  }
+
+  void decrement() {
+    setState(() {
+      if (count > 0) {
+        count--;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -106,7 +121,7 @@ class _My_Cart_WidgetState extends State<My_Cart_Widget> {
                     Material(
                       child: InkWell(
                         onTap: () {
-                          print("Clicked minus...");
+                          decrement();
                         },
                         child: Container(
                           width: 40,
@@ -114,7 +129,9 @@ class _My_Cart_WidgetState extends State<My_Cart_Widget> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            shape: BoxShape.circle,
+                            borderRadius: BorderRadius.circular(
+                              8.0,
+                            ),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black.withOpacity(0.2),
@@ -137,7 +154,7 @@ class _My_Cart_WidgetState extends State<My_Cart_Widget> {
                       width: 13.0,
                     ),
                     Text(
-                      "1",
+                      count.toString(),
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
@@ -149,7 +166,7 @@ class _My_Cart_WidgetState extends State<My_Cart_Widget> {
                     Material(
                       child: InkWell(
                         onTap: () {
-                          print("Clicked plus...");
+                          increment();
                         },
                         child: Container(
                           width: 40,
@@ -157,7 +174,9 @@ class _My_Cart_WidgetState extends State<My_Cart_Widget> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            shape: BoxShape.circle,
+                            borderRadius: BorderRadius.circular(
+                              8.0,
+                            ),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black.withOpacity(0.2),
@@ -211,6 +230,16 @@ class _My_Cart_WidgetState extends State<My_Cart_Widget> {
     showMenu(
       context: context,
       position: RelativeRect.fromLTRB(100, 100, 40, 0),
+      shape: Border(
+        bottom: BorderSide(
+          color: Colors.red,
+          width: 2,
+        ),
+        top: BorderSide(
+          color: Colors.red,
+          width: 2,
+        ),
+      ),
       items: [
         PopupMenuItem<String>(
           value: 'add',

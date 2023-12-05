@@ -98,7 +98,7 @@ class _My_Shippping_Address_ScreenState
                                       height: 13.0,
                                     ),
                                     Text(
-                                      "3 Newbridge Counrt",
+                                      "Km4",
                                       style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -107,7 +107,7 @@ class _My_Shippping_Address_ScreenState
                                       height: 5.0,
                                     ),
                                     Text(
-                                      "Km4, Hodan-Mogadishu, Somalia",
+                                      "Hodan-Mogadishu, Somalia",
                                       style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                       ),

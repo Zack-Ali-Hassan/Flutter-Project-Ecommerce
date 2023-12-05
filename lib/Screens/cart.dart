@@ -58,18 +58,6 @@ class _My_Cart_ScreenState extends State<My_Cart_Screen> {
                   height: 15.0,
                 ),
                 My_Cart_Widget(),
-                const SizedBox(
-                  height: 15.0,
-                ),
-                My_Cart_Widget(),
-                const SizedBox(
-                  height: 15.0,
-                ),
-                My_Cart_Widget(),
-                const SizedBox(
-                  height: 15.0,
-                ),
-                My_Cart_Widget(),
                 const SizedBox(height: 18.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

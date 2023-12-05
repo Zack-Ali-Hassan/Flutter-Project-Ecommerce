@@ -2,14 +2,16 @@ import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-class My_Product_Info_Screen extends StatefulWidget {
-  const My_Product_Info_Screen({super.key});
+class My_Discount_Product_Info_Screen extends StatefulWidget {
+  const My_Discount_Product_Info_Screen({super.key});
 
   @override
-  State<My_Product_Info_Screen> createState() => _My_Product_Info_ScreenState();
+  State<My_Discount_Product_Info_Screen> createState() =>
+      _My_Discount_Product_Info_ScreenState();
 }
 
-class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
+class _My_Discount_Product_Info_ScreenState
+    extends State<My_Discount_Product_Info_Screen> {
   final List<String> size = ['M', 'L', 'XL', 'XXL', 'XXL'];
   String selectedSize = 'M';
   final List<String> colors = ['Black', 'White', 'Red', 'Blue', 'Grey'];
@@ -179,22 +181,41 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "T-shirt",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700,
-                            ),
+                          Row(
+                            children: [
+                              Text(
+                                "T-shirt",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ],
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 10.0),
-                            child: Text(
-                              "\$ " + "20",
-                              style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.red,
-                              ),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "\$ " + "20",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  "\$ " + "10",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],

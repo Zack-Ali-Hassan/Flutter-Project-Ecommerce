@@ -1,3 +1,4 @@
+import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 
@@ -98,7 +99,12 @@ class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
                         ],
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return My_Discount_Products_Screen();
+                          }));
+                        },
                         child: Text(
                           "view all",
                           style: TextStyle(
@@ -123,7 +129,7 @@ class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
                           width: 15.0,
                         );
                       },
-                      itemCount: 10,
+                      itemCount: 6,
                     ),
                   )
                 ],
@@ -164,7 +170,12 @@ class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
                         ],
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return My_New_Products_Screen();
+                          }));
+                        },
                         child: Text(
                           "view all",
                           style: TextStyle(
@@ -189,7 +200,7 @@ class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
                           width: 15.0,
                         );
                       },
-                      itemCount: 10,
+                      itemCount: 5,
                     ),
                   )
                 ],

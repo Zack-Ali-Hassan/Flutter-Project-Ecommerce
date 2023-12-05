@@ -1,4 +1,6 @@
+import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 class Sales_Discount_Widget extends StatefulWidget {
   const Sales_Discount_Widget({super.key});
@@ -16,7 +18,9 @@ class _Sales_Discount_WidgetState extends State<Sales_Discount_Widget> {
       child: InkWell(
         borderRadius: BorderRadius.circular(20.0),
         onTap: () {
-          print("clicked...");
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return My_Discount_Product_Info_Screen();
+          }));
         },
         child: Container(
           width: 150,
@@ -74,29 +78,26 @@ class _Sales_Discount_WidgetState extends State<Sales_Discount_Widget> {
                       children: [
                         Transform(
                           transform: Matrix4.translationValues(0, 10, 0),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () {
-                                print("Added favorites");
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.5),
-                                      blurRadius: 8,
-                                      offset: Offset(0, 2),
-                                    ),
-                                  ],
-                                ),
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                  radius: 15,
-                                  child: Icon(
-                                    Icons.favorite_outline,
-                                    size: 20,
+                          child: InkWell(
+                            onTap: () {
+                              print("Added favorites");
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.5),
+                                    blurRadius: 8,
+                                    offset: Offset(0, 2),
                                   ),
+                                ],
+                              ),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 15,
+                                child: LikeButton(
+                                  size: 20,
                                 ),
                               ),
                             ),
@@ -107,40 +108,20 @@ class _Sales_Discount_WidgetState extends State<Sales_Discount_Widget> {
                   ],
                 ),
               ),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "⭐⭐⭐⭐⭐",
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: "  (10)",
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 10.0,
                 ),
-              ),
-              Text(
-                "Dorothy perkins",
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
-              ),
-              Text(
-                "Evening Dress",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
+                child: Text(
+                  "Evening Dress",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
+                padding: const EdgeInsets.only(left: 10.0, bottom: 18.0),
                 child: RichText(
                   text: TextSpan(
                     children: [

@@ -1,6 +1,8 @@
 export '../Screens/bottomBar.dart';
 export './sales_discount_widget.dart';
 export './sales_new_widget.dart';
+export './new_products_screen_widget.dart';
+export './discount_product_screen.dart';
 export './women_widget.dart';
 export './women_clothes_widget.dart';
 export './women_shoes_widget.dart';
@@ -13,3 +15,5 @@ export './kids_widget.dart';
 export './cart_widget.dart';
 export './delivery_method_widget.dart';
 export './favorite_widget.dart';
+export './order_widget.dart';
+export './order_detail_cart_widget.dart';

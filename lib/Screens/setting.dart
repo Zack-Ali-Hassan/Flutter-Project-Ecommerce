@@ -184,34 +184,6 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                 const SizedBox(
                   height: 35.0,
                 ),
-                Material(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(
-                    10.0,
-                  ),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(
-                      10.0,
-                    ),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (_) {
-                        return My_First_Screen();
-                      }));
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      height: 52,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(),
-                      child: Text(
-                        "LOG OUT",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

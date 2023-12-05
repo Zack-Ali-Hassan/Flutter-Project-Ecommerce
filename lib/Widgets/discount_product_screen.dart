@@ -1,30 +1,32 @@
-import 'package:e_commerce_project_app/Screens/product_info.dart';
+import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-class Sales_New_Screen extends StatefulWidget {
-  const Sales_New_Screen({super.key});
+class My_Discount_Products_Widget extends StatefulWidget {
+  const My_Discount_Products_Widget({super.key});
 
   @override
-  State<Sales_New_Screen> createState() => _Sales_New_ScreenState();
+  State<My_Discount_Products_Widget> createState() =>
+      _My_Discount_Products_WidgetState();
 }
 
-class _Sales_New_ScreenState extends State<Sales_New_Screen> {
+class _My_Discount_Products_WidgetState
+    extends State<My_Discount_Products_Widget> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.red,
+      color: Colors.white,
       borderRadius: BorderRadius.circular(20.0),
       child: InkWell(
         borderRadius: BorderRadius.circular(20.0),
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return My_Product_Info_Screen();
+            return My_Discount_Product_Info_Screen();
           }));
         },
         child: Container(
           width: 150,
-          height: 280,
+          height: 90,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20.0),
@@ -35,13 +37,12 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
             children: [
               Container(
                 width: double.infinity,
-                height: 180,
+                height: 120,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                        "https://cdn.media.amplience.net/i/truworths/prod3096388_1?fmt=auto&\$pdp-main-mobile\$"),
-                  ),
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                          "https://ae01.alicdn.com/kf/Sc752a9aa2e484ecd8c47efceed88fd9bl.jpg_640x640Q90.jpg_.webp")),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: Column(
@@ -59,11 +60,11 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
                             height: 25,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: Colors.black,
+                              color: Colors.red,
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Text(
-                              "New",
+                              "-20%",
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.white,
@@ -110,31 +111,41 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                  left: 10.0,
-                ),
-                child: Text(
-                  "Evening Dress",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0, bottom: 18.0),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "15\$",
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.w600,
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Evening Dress",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 13.0),
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "15\$",
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
+                            TextSpan(
+                              text: "  12\$",
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
