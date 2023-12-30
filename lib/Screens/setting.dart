@@ -69,21 +69,17 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                       6.0,
                     ),
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 5,
-                        offset: Offset(
-                          1,
-                          1,
-                        ),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                       labelText: 'Full Name',
                       labelStyle: TextStyle(
                         color: Colors.grey,
@@ -98,21 +94,17 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                       6.0,
                     ),
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 5,
-                        offset: Offset(
-                          1,
-                          1,
-                        ),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                       labelText: 'Gmail',
                       labelStyle: TextStyle(
                         color: Colors.grey,
@@ -157,21 +149,22 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                           6.0,
                         ),
                         color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 5,
-                            offset: Offset(
-                              1,
-                              1,
-                            ),
-                          ),
-                        ],
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                          filled: true,
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                            ),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
                           labelText: 'Password',
                           labelStyle: TextStyle(
                             color: Colors.grey,
@@ -239,21 +232,18 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                         6.0,
                       ),
                       color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          blurRadius: 8,
-                          offset: Offset(
-                            1,
-                            1,
-                          ),
-                        ),
-                      ],
                     ),
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
-                        border: InputBorder.none,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.circular(7),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.red, width: 2),
+                          borderRadius: BorderRadius.circular(7),
+                        ),
                         labelText: 'Old Password',
                         labelStyle: TextStyle(
                           color: Colors.grey,
@@ -271,7 +261,7 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                         child: Text(
                           "Forget Password?",
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: Colors.red,
                           ),
                         ),
                       ),
@@ -284,21 +274,18 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                         6.0,
                       ),
                       color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          blurRadius: 8,
-                          offset: Offset(
-                            1,
-                            1,
-                          ),
-                        ),
-                      ],
                     ),
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
-                        border: InputBorder.none,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.circular(7),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.red, width: 2),
+                          borderRadius: BorderRadius.circular(7),
+                        ),
                         labelText: 'New Password',
                         labelStyle: TextStyle(
                           color: Colors.grey,
@@ -313,21 +300,18 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                         6.0,
                       ),
                       color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          blurRadius: 8,
-                          offset: Offset(
-                            1,
-                            1,
-                          ),
-                        ),
-                      ],
                     ),
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
-                        border: InputBorder.none,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.circular(7),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.red, width: 2),
+                          borderRadius: BorderRadius.circular(7),
+                        ),
                         labelText: 'Repeat New Password',
                         labelStyle: TextStyle(
                           color: Colors.grey,
@@ -352,7 +336,7 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                       },
                       child: Container(
                         width: double.infinity,
-                        height: 52,
+                        height: 45,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(),
                         child: Text(
