@@ -28,43 +28,15 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 20.0,
-                    ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(
-                          8.0,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 10,
-                          )
-                        ],
-                      ),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Icon(
-                            Icons.arrow_back_ios,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
                       height: 30.0,
                     ),
-                    Text(
-                      "Lets help to login application",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
+                    Center(
+                      child: Text(
+                        "Lets help to login application",
+                        style: TextStyle(
+                          fontSize: 23,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                     Container(
@@ -80,18 +52,24 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.only(
-                        left: 20.0,
-                        right: 20.0,
+                        left: 0.0,
+                        right: 0.0,
                         top: 0.0,
                       ),
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 247, 234, 234),
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red, width: 2),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
                           hintText: "Enter your name",
                           hintStyle: TextStyle(
                             fontSize: 15,
@@ -105,18 +83,24 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.only(
-                        left: 20.0,
-                        right: 20.0,
+                        left: 0.0,
+                        right: 0.0,
                         top: 0.0,
                       ),
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 247, 234, 234),
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red, width: 2),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
                           hintText: "Enter your email",
                           hintStyle: TextStyle(
                             fontSize: 15,
@@ -130,18 +114,24 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.only(
-                        left: 20.0,
-                        right: 20.0,
+                        left: 0.0,
+                        right: 0.0,
                         top: 0.0,
                       ),
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 247, 234, 234),
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red, width: 2),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
                           hintText: "Enter your password",
                           hintStyle: TextStyle(
                             fontSize: 15,
@@ -155,18 +145,24 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.only(
-                        left: 20.0,
-                        right: 20.0,
+                        left: 0.0,
+                        right: 0.0,
                         top: 0.0,
                       ),
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 247, 234, 234),
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red, width: 2),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
                           hintText: "Enter confirm password",
                           hintStyle: TextStyle(
                             fontSize: 15,
@@ -193,7 +189,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                         },
                         child: Container(
                           width: double.infinity,
-                          height: 60,
+                          height: 50,
                           decoration: BoxDecoration(
                             color: Colors.red,
                             borderRadius: BorderRadius.circular(
@@ -249,7 +245,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.red,
-                                decoration: TextDecoration.underline,
+                                // decoration: TextDecoration.underline,
                               ),
                             ),
                           ),

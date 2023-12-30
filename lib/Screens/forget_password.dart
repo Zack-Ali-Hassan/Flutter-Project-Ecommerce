@@ -22,43 +22,9 @@ class _Forget_Password_ScreenState extends State<Forget_Password_Screen> {
               bottom: 15.0,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(
-                          8.0,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 10,
-                          )
-                        ],
-                      ),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Icon(
-                            Icons.arrow_back_ios,
-                          ),
-                        ),
-                      ),
-                    ),
                     const SizedBox(
                       height: 30.0,
                     ),
@@ -78,18 +44,24 @@ class _Forget_Password_ScreenState extends State<Forget_Password_Screen> {
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.only(
-                        left: 20.0,
-                        right: 20.0,
+                        left: 0.0,
+                        right: 0.0,
                         top: 0.0,
                       ),
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 247, 234, 234),
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          border: InputBorder.none,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red, width: 2),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
                           hintText: "Enter your email",
                           hintStyle: TextStyle(
                             fontSize: 15,
@@ -109,10 +81,10 @@ class _Forget_Password_ScreenState extends State<Forget_Password_Screen> {
                           10.0,
                         ),
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                            return My_Reset_Password_Screen();
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (_) {
+                          //   return My_Reset_Password_Screen();
+                          // }));
                         },
                         child: Container(
                           width: double.infinity,
@@ -141,7 +113,7 @@ class _Forget_Password_ScreenState extends State<Forget_Password_Screen> {
                 Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 60.0),
+                      padding: const EdgeInsets.only(top: 30.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -169,7 +141,7 @@ class _Forget_Password_ScreenState extends State<Forget_Password_Screen> {
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.red,
-                                decoration: TextDecoration.underline,
+                                // decoration: TextDecoration.underline,
                               ),
                             ),
                           ),

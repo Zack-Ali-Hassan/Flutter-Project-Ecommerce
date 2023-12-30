@@ -194,19 +194,21 @@ class _My_Checkout_ScreenState extends State<My_Checkout_Screen> {
                             "EVC plus",
                             style: TextStyle(
                               fontSize: 15,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
                         const SizedBox(
                           width: 20.0,
                         ),
-                        Text(
-                          "*712*619222352*126.5#",
-                          style: TextStyle(
-                            letterSpacing: 1.5,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
+                        Expanded(
+                          child: Text(
+                            "*712*619222352*20.5#",
+                            style: TextStyle(
+                              letterSpacing: 1.5,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ],

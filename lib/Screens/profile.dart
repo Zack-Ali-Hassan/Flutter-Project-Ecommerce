@@ -149,9 +149,9 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
                   Card(
                     child: ListTile(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (_) {
-                          return My_Payment_Screen();
-                        }));
+                        // Navigator.push(context, MaterialPageRoute(builder: (_) {
+                        //   return My_Payment_Screen();
+                        // }));
                       },
                       title: Text(
                         "Payment methods",
