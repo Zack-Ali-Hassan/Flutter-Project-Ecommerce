@@ -66,7 +66,7 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                       },
                       child: Container(
                         width: double.infinity,
-                        height: 52,
+                        height: 48,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(),
                         child: Text(

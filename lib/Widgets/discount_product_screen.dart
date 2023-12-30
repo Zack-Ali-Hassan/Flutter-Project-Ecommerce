@@ -37,7 +37,7 @@ class _My_Discount_Products_WidgetState
             children: [
               Container(
                 width: double.infinity,
-                height: 120,
+                height: 110,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,

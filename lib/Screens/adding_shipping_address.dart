@@ -14,7 +14,7 @@ class _My_Adding_Shipping_Address_ScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.9,
@@ -40,9 +40,9 @@ class _My_Adding_Shipping_Address_ScreenState
         children: [
           Padding(
             padding: const EdgeInsets.only(
-              left: 10.0,
-              right: 10.0,
-              top: 45.0,
+              left: 20.0,
+              right: 20.0,
+              top: 35.0,
               bottom: 15.0,
             ),
             child: Column(
@@ -55,21 +55,17 @@ class _My_Adding_Shipping_Address_ScreenState
                       6.0,
                     ),
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: Offset(
-                          1,
-                          1,
-                        ),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                       labelText: 'Full Name',
                       labelStyle: TextStyle(
                         color: Colors.grey,
@@ -84,21 +80,17 @@ class _My_Adding_Shipping_Address_ScreenState
                       6.0,
                     ),
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: Offset(
-                          1,
-                          1,
-                        ),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                       labelText: 'Address',
                       labelStyle: TextStyle(
                         color: Colors.grey,
@@ -113,21 +105,17 @@ class _My_Adding_Shipping_Address_ScreenState
                       6.0,
                     ),
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: Offset(
-                          1,
-                          1,
-                        ),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                       labelText: 'City',
                       labelStyle: TextStyle(
                         color: Colors.grey,
@@ -142,21 +130,17 @@ class _My_Adding_Shipping_Address_ScreenState
                       6.0,
                     ),
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: Offset(
-                          1,
-                          1,
-                        ),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                       labelText: 'State/Region',
                       labelStyle: TextStyle(
                         color: Colors.grey,
@@ -173,21 +157,17 @@ class _My_Adding_Shipping_Address_ScreenState
                       6.0,
                     ),
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: Offset(
-                          1,
-                          1,
-                        ),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                       labelText: 'Zip Code (Postal Code)',
                       labelStyle: TextStyle(
                         color: Colors.grey,
@@ -204,21 +184,17 @@ class _My_Adding_Shipping_Address_ScreenState
                       6.0,
                     ),
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: Offset(
-                          1,
-                          1,
-                        ),
-                      ),
-                    ],
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                       labelText: 'Country',
                       suffixIcon: IconButton(
                         onPressed: () {},
@@ -239,11 +215,11 @@ class _My_Adding_Shipping_Address_ScreenState
                 Material(
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(
-                    25.0,
+                    7.0,
                   ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(
-                      10.0,
+                      7.0,
                     ),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (_) {

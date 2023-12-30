@@ -235,7 +235,6 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
-                        filled: true,
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
                           borderRadius: BorderRadius.circular(7),
@@ -277,7 +276,6 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
-                        filled: true,
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
                           borderRadius: BorderRadius.circular(7),
@@ -303,7 +301,6 @@ class _My_Settings_ScreenState extends State<My_Settings_Screen> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
-                        filled: true,
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
                           borderRadius: BorderRadius.circular(7),
