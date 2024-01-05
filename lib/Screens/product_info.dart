@@ -85,14 +85,14 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                           Container(
                             width: 120,
                             height: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                10,
-                              ),
-                              border: Border.all(
-                                color: Colors.red,
-                              ),
-                            ),
+                            // decoration: BoxDecoration(
+                            //   borderRadius: BorderRadius.circular(
+                            //     10,
+                            //   ),
+                            //   border: Border.all(
+                            //     color: Colors.red,
+                            //   ),
+                            // ),
                             child: Padding(
                               padding: const EdgeInsets.only(left: 8.0),
                               child: DropdownButton<String>(
@@ -115,14 +115,14 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                           Container(
                             width: 120,
                             height: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                10,
-                              ),
-                              border: Border.all(
-                                color: Colors.red,
-                              ),
-                            ),
+                            // decoration: BoxDecoration(
+                            //   borderRadius: BorderRadius.circular(
+                            //     10,
+                            //   ),
+                            //   border: Border.all(
+                            //     color: Colors.red,
+                            //   ),
+                            // ),
                             child: Padding(
                               padding: const EdgeInsets.only(left: 8.0),
                               child: DropdownButton<String>(
@@ -203,7 +203,7 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                         height: 10.0,
                       ),
                       Text(
-                        "widget.productModal.description",
+                        "description",
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.grey[800],

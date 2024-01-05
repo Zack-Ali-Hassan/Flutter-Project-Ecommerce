@@ -13,6 +13,11 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Text("DALAB APP"),
+        centerTitle: true,
+      ),
       drawer: Drawer(
         backgroundColor: Colors.white,
         child: Column(
@@ -34,7 +39,7 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                   Text(
                     "Ahmed Mukhtaar",
                     style: TextStyle(
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w700,
                       fontSize: 17,
                     ),
                   ),
@@ -53,11 +58,11 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                   Material(
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(
-                      10.0,
+                      30.0,
                     ),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(
-                        10.0,
+                        30.0,
                       ),
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
@@ -66,14 +71,13 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                       },
                       child: Container(
                         width: double.infinity,
-                        height: 48,
+                        height: 45,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(),
                         child: Text(
                           "LOG OUT",
                           style: TextStyle(
-                            color: Colors.white,
-                          ),
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),

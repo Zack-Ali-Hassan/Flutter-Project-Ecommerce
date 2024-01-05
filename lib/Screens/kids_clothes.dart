@@ -68,7 +68,9 @@ class _My_Kids_Clothes_ScreenState extends State<My_Kids_Clothes_Screen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           TextButton.icon(
-                            onPressed: () {},
+                            onPressed: () {
+                              _showModalBottomSheet(context);
+                            },
                             icon: Icon(
                               Icons.filter_list_outlined,
                               color: Colors.black,
@@ -82,7 +84,9 @@ class _My_Kids_Clothes_ScreenState extends State<My_Kids_Clothes_Screen> {
                             ),
                           ),
                           TextButton.icon(
-                            onPressed: () {},
+                            onPressed: () {
+                              _showModalBottomSheet(context);
+                            },
                             icon: Row(
                               children: [
                                 Icon(
@@ -154,26 +158,21 @@ class _My_Kids_Clothes_ScreenState extends State<My_Kids_Clothes_Screen> {
                     const SizedBox(
                       height: 27.0,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 10.0,
-                        horizontal: 10.0,
+                    GridView.builder(
+                      cacheExtent: 280,
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 20,
+                        crossAxisSpacing: 15,
+                        mainAxisExtent: 300,
                       ),
-                      child: GridView.builder(
-                        cacheExtent: 280,
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        // mainAxisAlignment: MainAxisAlignment.start,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10,
-                        ),
-                        itemCount: 4,
-                        itemBuilder: (context, index) {
-                          return My_Kids_Clothes_Widget();
-                        },
-                      ),
+                      itemCount: 4,
+                      itemBuilder: (context, index) {
+                        return My_Kids_Clothes_Widget();
+                      },
                     ),
                   ],
                 ),
@@ -216,6 +215,102 @@ class _My_Kids_Clothes_ScreenState extends State<My_Kids_Clothes_Screen> {
           ),
         ),
       ),
+    );
+  }
+
+  void _showModalBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(
+                50.0,
+              ),
+              topRight: Radius.circular(
+                50.0,
+              ),
+            ),
+          ),
+          child: ListView(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 60,
+                    height: 5,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[500],
+                      borderRadius: BorderRadius.circular(
+                        5,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 13.0),
+                  Text(
+                    'Sort by',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 30.0),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      _showModalBottomSheet(context);
+                    },
+                    child: Text(
+                      "Newest",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30.0),
+                  TextButton(
+                    onPressed: () {
+                      _showModalBottomSheet(context);
+                    },
+                    child: Text(
+                      "Price: lowest to high",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30.0),
+                  TextButton(
+                    onPressed: () {
+                      _showModalBottomSheet(context);
+                    },
+                    child: Text(
+                      "Price: Highest to low",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30.0),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
