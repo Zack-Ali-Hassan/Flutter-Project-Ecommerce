@@ -121,15 +121,6 @@ class _My_Favorite_ScreenState extends State<My_Favorite_Screen> {
                     const SizedBox(
                       height: 27.0,
                     ),
-                    My_Favorite_Widget(),
-                    const SizedBox(
-                      height: 27.0,
-                    ),
-                    My_Favorite_Widget(),
-                    const SizedBox(
-                      height: 27.0,
-                    ),
-                    My_Favorite_Widget(),
                   ],
                 ),
               ),

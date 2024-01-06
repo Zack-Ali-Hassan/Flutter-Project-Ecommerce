@@ -132,7 +132,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                             borderSide: BorderSide(color: Colors.red, width: 2),
                             borderRadius: BorderRadius.circular(7),
                           ),
-                          hintText: "Enter your password",
+                          hintText: "Enter your mobile",
                           hintStyle: TextStyle(
                             fontSize: 15,
                           ),
@@ -163,7 +163,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                             borderSide: BorderSide(color: Colors.red, width: 2),
                             borderRadius: BorderRadius.circular(7),
                           ),
-                          hintText: "Enter confirm password",
+                          hintText: "Enter your address",
                           hintStyle: TextStyle(
                             fontSize: 15,
                           ),
@@ -171,8 +171,70 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 60.0,
+                      height: 20.0,
                     ),
+                    // Container(
+                    //   width: double.infinity,
+                    //   padding: EdgeInsets.only(
+                    //     left: 0.0,
+                    //     right: 0.0,
+                    //     top: 0.0,
+                    //   ),
+                    //   height: 50,
+                    //   decoration: BoxDecoration(
+                    //     borderRadius: BorderRadius.circular(7.0),
+                    //   ),
+                    //   child: TextFormField(
+                    //     decoration: InputDecoration(
+                    //       border: OutlineInputBorder(
+                    //         borderSide: BorderSide(color: Colors.black),
+                    //         borderRadius: BorderRadius.circular(7),
+                    //       ),
+                    //       focusedBorder: OutlineInputBorder(
+                    //         borderSide: BorderSide(color: Colors.red, width: 2),
+                    //         borderRadius: BorderRadius.circular(7),
+                    //       ),
+                    //       hintText: "Enter your password",
+                    //       hintStyle: TextStyle(
+                    //         fontSize: 15,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // const SizedBox(
+                    //   height: 20.0,
+                    // ),
+                    // Container(
+                    //   width: double.infinity,
+                    //   padding: EdgeInsets.only(
+                    //     left: 0.0,
+                    //     right: 0.0,
+                    //     top: 0.0,
+                    //   ),
+                    //   height: 50,
+                    //   decoration: BoxDecoration(
+                    //     borderRadius: BorderRadius.circular(7.0),
+                    //   ),
+                    //   child: TextFormField(
+                    //     decoration: InputDecoration(
+                    //       border: OutlineInputBorder(
+                    //         borderSide: BorderSide(color: Colors.black),
+                    //         borderRadius: BorderRadius.circular(7),
+                    //       ),
+                    //       focusedBorder: OutlineInputBorder(
+                    //         borderSide: BorderSide(color: Colors.red, width: 2),
+                    //         borderRadius: BorderRadius.circular(7),
+                    //       ),
+                    //       hintText: "Enter confirm password",
+                    //       hintStyle: TextStyle(
+                    //         fontSize: 15,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // const SizedBox(
+                    //   height: 60.0,
+                    // ),
                     Material(
                       borderRadius: BorderRadius.circular(
                         10.0,
@@ -184,7 +246,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (_) {
-                            return My_Login_Screen();
+                            return BottomBar();
                           }));
                         },
                         child: Container(
@@ -214,47 +276,47 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                     ),
                   ],
                 ),
-              //   Column(
-              //     children: [
-              //       Padding(
-              //         padding: const EdgeInsets.only(top: 0.0),
-              //         child: Row(
-              //           mainAxisAlignment: MainAxisAlignment.center,
-              //           children: [
-              //             Text(
-              //               "Already have an acount?",
-              //               style: TextStyle(
-              //                 fontSize: 15,
-              //                 fontWeight: FontWeight.w500,
-              //               ),
-              //             ),
-              //             TextButton(
-              //               onPressed: () {
-              //                 Navigator.push(
-              //                   context,
-              //                   MaterialPageRoute(
-              //                     builder: (_) {
-              //                       return My_Login_Screen();
-              //                     },
-              //                   ),
-              //                 );
-              //               },
-              //               child: Text(
-              //                 " Login Now",
-              //                 style: TextStyle(
-              //                   fontSize: 15,
-              //                   fontWeight: FontWeight.w500,
-              //                   color: Colors.red,
-              //                   // decoration: TextDecoration.underline,
-              //                 ),
-              //               ),
-              //             ),
-              //           ],
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-               ],
+                //   Column(
+                //     children: [
+                //       Padding(
+                //         padding: const EdgeInsets.only(top: 0.0),
+                //         child: Row(
+                //           mainAxisAlignment: MainAxisAlignment.center,
+                //           children: [
+                //             Text(
+                //               "Already have an acount?",
+                //               style: TextStyle(
+                //                 fontSize: 15,
+                //                 fontWeight: FontWeight.w500,
+                //               ),
+                //             ),
+                //             TextButton(
+                //               onPressed: () {
+                //                 Navigator.push(
+                //                   context,
+                //                   MaterialPageRoute(
+                //                     builder: (_) {
+                //                       return My_Login_Screen();
+                //                     },
+                //                   ),
+                //                 );
+                //               },
+                //               child: Text(
+                //                 " Login Now",
+                //                 style: TextStyle(
+                //                   fontSize: 15,
+                //                   fontWeight: FontWeight.w500,
+                //                   color: Colors.red,
+                //                   // decoration: TextDecoration.underline,
+                //                 ),
+                //               ),
+                //             ),
+                //           ],
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+              ],
             ),
           ),
         ),
