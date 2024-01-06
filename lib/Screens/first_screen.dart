@@ -69,54 +69,54 @@ class _My_First_ScreenState extends State<My_First_Screen> {
                       const SizedBox(
                         height: 20.0,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ),
-                        child: Material(
-                          borderRadius: BorderRadius.circular(
-                            10.0,
-                          ),
-                          child: InkWell(
-                            borderRadius: BorderRadius.circular(
-                              10.0,
-                            ),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) {
-                                    return My_Login_Screen();
-                                  },
-                                ),
-                              );
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(
-                                  10.0,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Login",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20.0,
-                      ),
+                      // Padding(
+                      //   padding: const EdgeInsets.symmetric(
+                      //     horizontal: 20,
+                      //   ),
+                      //   child: Material(
+                      //     borderRadius: BorderRadius.circular(
+                      //       10.0,
+                      //     ),
+                      //     child: InkWell(
+                      //       borderRadius: BorderRadius.circular(
+                      //         10.0,
+                      //       ),
+                      //       onTap: () {
+                      //         Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //             builder: (_) {
+                      //               return My_Login_Screen();
+                      //             },
+                      //           ),
+                      //         );
+                      //       },
+                      //       child: Container(
+                      //         width: double.infinity,
+                      //         height: 60,
+                      //         decoration: BoxDecoration(
+                      //           color: Colors.white,
+                      //           borderRadius: BorderRadius.circular(
+                      //             10.0,
+                      //           ),
+                      //         ),
+                      //         child: Align(
+                      //           alignment: Alignment.center,
+                      //           child: Text(
+                      //             "Login",
+                      //             style: TextStyle(
+                      //               color: Colors.black,
+                      //               fontWeight: FontWeight.w600,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // const SizedBox(
+                      //   height: 20.0,
+                      // ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 20,
@@ -154,7 +154,7 @@ class _My_First_ScreenState extends State<My_First_Screen> {
                               child: Align(
                                 alignment: Alignment.center,
                                 child: Text(
-                                  "Register",
+                                  "GET START",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,

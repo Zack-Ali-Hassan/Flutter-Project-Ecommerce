@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: BottomBar(),
+      // home: BottomBar(),
 
-      // home: My_First_Screen(),
+      home: My_First_Screen(),
     );
   }
 }

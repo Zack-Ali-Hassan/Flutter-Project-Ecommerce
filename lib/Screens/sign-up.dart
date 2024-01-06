@@ -32,7 +32,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                     ),
                     Center(
                       child: Text(
-                        "Lets help to login application",
+                        "Lets help to register application",
                         style: TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.w600,
@@ -214,47 +214,47 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                     ),
                   ],
                 ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 0.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Already have an acount?",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) {
-                                    return My_Login_Screen();
-                                  },
-                                ),
-                              );
-                            },
-                            child: Text(
-                              " Login Now",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.red,
-                                // decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+              //   Column(
+              //     children: [
+              //       Padding(
+              //         padding: const EdgeInsets.only(top: 0.0),
+              //         child: Row(
+              //           mainAxisAlignment: MainAxisAlignment.center,
+              //           children: [
+              //             Text(
+              //               "Already have an acount?",
+              //               style: TextStyle(
+              //                 fontSize: 15,
+              //                 fontWeight: FontWeight.w500,
+              //               ),
+              //             ),
+              //             TextButton(
+              //               onPressed: () {
+              //                 Navigator.push(
+              //                   context,
+              //                   MaterialPageRoute(
+              //                     builder: (_) {
+              //                       return My_Login_Screen();
+              //                     },
+              //                   ),
+              //                 );
+              //               },
+              //               child: Text(
+              //                 " Login Now",
+              //                 style: TextStyle(
+              //                   fontSize: 15,
+              //                   fontWeight: FontWeight.w500,
+              //                   color: Colors.red,
+              //                   // decoration: TextDecoration.underline,
+              //                 ),
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+               ],
             ),
           ),
         ),
