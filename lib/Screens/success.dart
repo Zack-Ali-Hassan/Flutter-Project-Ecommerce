@@ -34,11 +34,8 @@ class _My_Success_ScreenState extends State<My_Success_Screen> {
                       height: 230,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            "https://blog.wellboxes.co.uk/wp-content/uploads/2021/09/gifts-image.png",
-                          ),
-                        ),
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/successfull.png")),
                       ),
                     ),
                     const SizedBox(
@@ -71,11 +68,11 @@ class _My_Success_ScreenState extends State<My_Success_Screen> {
                   Material(
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(
-                      10.0,
+                      30.0,
                     ),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(
-                        10.0,
+                        30.0,
                       ),
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
@@ -84,7 +81,7 @@ class _My_Success_ScreenState extends State<My_Success_Screen> {
                       },
                       child: Container(
                         width: double.infinity,
-                        height: 52,
+                        height: 48,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(),
                         child: Text(
