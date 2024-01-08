@@ -38,9 +38,9 @@ class _My_Kids_Clothes_WidgetState extends State<My_Kids_Clothes_Widget> {
       child: InkWell(
         borderRadius: BorderRadius.circular(20.0),
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return My_Product_Info_Screen();
-          }));
+          // Navigator.push(context, MaterialPageRoute(builder: (_) {
+          //   return My_Product_Info_Screen();
+          // }));
         },
         child: Container(
           width: 170,

@@ -2,8 +2,11 @@ import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
+import '../Models/model.dart';
+
 class My_Product_Info_Screen extends StatefulWidget {
-  const My_Product_Info_Screen({super.key});
+  const My_Product_Info_Screen({super.key, required this.product});
+  final ProductModel product;
 
   @override
   State<My_Product_Info_Screen> createState() => _My_Product_Info_ScreenState();
@@ -60,8 +63,7 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   image: DecorationImage(
-                    image: NetworkImage(
-                        "https://i.pinimg.com/originals/34/65/d3/3465d39a3a8ddbfa31f9dc94dd48cee9.jpg"),
+                    image: NetworkImage(widget.product.image),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -180,7 +182,7 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "T-shirt",
+                            widget.product.name,
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
@@ -189,7 +191,7 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                           Padding(
                             padding: const EdgeInsets.only(right: 10.0),
                             child: Text(
-                              "\$ " + "20",
+                              "\$ " + widget.product.price,
                               style: TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.w700,
@@ -203,7 +205,7 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                         height: 10.0,
                       ),
                       Text(
-                        "description",
+                        widget.product.description,
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.grey[800],

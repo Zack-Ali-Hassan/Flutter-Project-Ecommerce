@@ -20,9 +20,9 @@ class _New_Products_Screen_WidgetState
       child: InkWell(
         borderRadius: BorderRadius.circular(20.0),
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return My_Product_Info_Screen();
-          }));
+          // Navigator.push(context, MaterialPageRoute(builder: (_) {
+          //   return My_Product_Info_Screen();
+          // }));
         },
         child: Container(
           width: 150,
