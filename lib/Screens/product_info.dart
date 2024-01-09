@@ -87,14 +87,6 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                           Container(
                             width: 120,
                             height: 40,
-                            // decoration: BoxDecoration(
-                            //   borderRadius: BorderRadius.circular(
-                            //     10,
-                            //   ),
-                            //   border: Border.all(
-                            //     color: Colors.red,
-                            //   ),
-                            // ),
                             child: Padding(
                               padding: const EdgeInsets.only(left: 8.0),
                               child: DropdownButton<String>(
@@ -181,11 +173,13 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            widget.product.name,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700,
+                          Expanded(
+                            child: Text(
+                              widget.product.name,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                           ),
                           Padding(
@@ -204,11 +198,13 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                       const SizedBox(
                         height: 10.0,
                       ),
-                      Text(
-                        widget.product.description,
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey[800],
+                      Expanded(
+                        child: Text(
+                          widget.product.description,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey[800],
+                          ),
                         ),
                       ),
                     ],

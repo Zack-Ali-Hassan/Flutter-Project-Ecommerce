@@ -2,9 +2,11 @@ import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-class My_Men_Shoes_Widget extends StatefulWidget {
-  const My_Men_Shoes_Widget({super.key});
+import '../Models/model.dart';
 
+class My_Men_Shoes_Widget extends StatefulWidget {
+  const My_Men_Shoes_Widget({super.key, required this.product});
+  final ProductModel product;
   @override
   State<My_Men_Shoes_Widget> createState() => _My_Men_Shoes_WidgetState();
 }
@@ -38,9 +40,11 @@ class _My_Men_Shoes_WidgetState extends State<My_Men_Shoes_Widget> {
       child: InkWell(
         borderRadius: BorderRadius.circular(20.0),
         onTap: () {
-          // Navigator.push(context, MaterialPageRoute(builder: (_) {
-          //   return My_Product_Info_Screen();
-          // }));
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return My_Product_Info_Screen(
+              product: widget.product,
+            );
+          }));
         },
         child: Container(
           width: 170,
@@ -61,7 +65,8 @@ class _My_Men_Shoes_WidgetState extends State<My_Men_Shoes_Widget> {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/18274390/2022/5/14/c64644f6-840f-4496-bb42-19359e9881771652523841987RoadsterMenBrownTexturedPUSneakers1.jpg"),
+                        widget.product.image,
+                      ),
                     ),
                     borderRadius: BorderRadius.circular(20.0),
                   ),
@@ -111,7 +116,7 @@ class _My_Men_Shoes_WidgetState extends State<My_Men_Shoes_Widget> {
                     top: 10.0,
                   ),
                   child: Text(
-                    "Boat",
+                    widget.product.name,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
@@ -128,7 +133,7 @@ class _My_Men_Shoes_WidgetState extends State<My_Men_Shoes_Widget> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "15\$",
+                          text: widget.product.price + "\$",
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w600,

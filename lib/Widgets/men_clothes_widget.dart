@@ -2,9 +2,11 @@ import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-class My_Men_Clothes_Widget extends StatefulWidget {
-  const My_Men_Clothes_Widget({super.key});
+import '../Models/model.dart';
 
+class My_Men_Clothes_Widget extends StatefulWidget {
+  const My_Men_Clothes_Widget({super.key, required this.product});
+  final ProductModel product;
   @override
   State<My_Men_Clothes_Widget> createState() => _My_Men_Clothes_WidgetState();
 }
@@ -38,9 +40,11 @@ class _My_Men_Clothes_WidgetState extends State<My_Men_Clothes_Widget> {
       child: InkWell(
         borderRadius: BorderRadius.circular(20.0),
         onTap: () {
-          // Navigator.push(context, MaterialPageRoute(builder: (_) {
-          //   return My_Product_Info_Screen();
-          // }));
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return My_Product_Info_Screen(
+              product: widget.product,
+            );
+          }));
         },
         child: Container(
           width: 170,
@@ -61,7 +65,8 @@ class _My_Men_Clothes_WidgetState extends State<My_Men_Clothes_Widget> {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://media.gq.com/photos/650d9aa873b15519c5c21ada/master/pass/best-clothing-brands-for-men.jpg,"),
+                        widget.product.image,
+                      ),
                     ),
                     borderRadius: BorderRadius.circular(20.0),
                   ),
@@ -111,7 +116,7 @@ class _My_Men_Clothes_WidgetState extends State<My_Men_Clothes_Widget> {
                     top: 10.0,
                   ),
                   child: Text(
-                    "T-shirt",
+                    widget.product.name,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
@@ -128,7 +133,7 @@ class _My_Men_Clothes_WidgetState extends State<My_Men_Clothes_Widget> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "15\$",
+                          text: widget.product.price + "\$",
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
