@@ -10,6 +10,37 @@ class My_Men_Clothes_Screen extends StatefulWidget {
 }
 
 class _My_Men_Clothes_ScreenState extends State<My_Men_Clothes_Screen> {
+   final String endPonit = "http://172.18.208.1/dalab%20app/products.php";
+  Future<List<ProductModel>> getProducts() async {
+    List<ProductModel> product = [];
+    try {
+      http.Response response = await http.post(
+        Uri.parse(endPonit),
+        body: {'action': 'getWomenClothesProducts'},
+      );
+      if (response.statusCode == 200) {
+        final List data = jsonDecode(response.body);
+        product = data.map((e) => ProductModel.fromJson(e)).toList();
+      } else {
+        print(response.body);
+      }
+    } on SocketException {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("No internet"),
+        ),
+      );
+    } catch (e) {
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+        ),
+      );
+    }
+    return product;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

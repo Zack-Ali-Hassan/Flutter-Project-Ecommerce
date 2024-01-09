@@ -70,9 +70,9 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                             borderSide: BorderSide(color: Colors.red, width: 2),
                             borderRadius: BorderRadius.circular(7),
                           ),
-                          hintText: "Enter your name",
-                          hintStyle: TextStyle(
-                            fontSize: 15,
+                          labelText: "Enter name",
+                          labelStyle: TextStyle(
+                            fontSize: 14,
                           ),
                         ),
                       ),
@@ -101,9 +101,9 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                             borderSide: BorderSide(color: Colors.red, width: 2),
                             borderRadius: BorderRadius.circular(7),
                           ),
-                          hintText: "Enter your email",
-                          hintStyle: TextStyle(
-                            fontSize: 15,
+                          labelText: "Enter email",
+                          labelStyle: TextStyle(
+                            fontSize: 14,
                           ),
                         ),
                       ),
@@ -132,9 +132,9 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                             borderSide: BorderSide(color: Colors.red, width: 2),
                             borderRadius: BorderRadius.circular(7),
                           ),
-                          hintText: "Enter your mobile",
-                          hintStyle: TextStyle(
-                            fontSize: 15,
+                          labelText: "Enter mobile",
+                          labelStyle: TextStyle(
+                            fontSize: 14,
                           ),
                         ),
                       ),
@@ -163,9 +163,9 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                             borderSide: BorderSide(color: Colors.red, width: 2),
                             borderRadius: BorderRadius.circular(7),
                           ),
-                          hintText: "Enter your address",
-                          hintStyle: TextStyle(
-                            fontSize: 15,
+                          labelText: "Enter address",
+                          labelStyle: TextStyle(
+                            fontSize: 14,
                           ),
                         ),
                       ),

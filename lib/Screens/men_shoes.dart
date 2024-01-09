@@ -1,7 +1,8 @@
 import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 import 'package:flutter/material.dart';
-
+import 'package:http/http.dart' as http;
+import 'package:http/http.dart' as http;
 class My_Men_Shoes_Screen extends StatefulWidget {
   const My_Men_Shoes_Screen({super.key});
 
@@ -10,6 +11,37 @@ class My_Men_Shoes_Screen extends StatefulWidget {
 }
 
 class _My_Men_Shoes_ScreenState extends State<My_Men_Shoes_Screen> {
+   final String endPonit = "http://172.18.208.1/dalab%20app/products.php";
+  Future<List<ProductModel>> getProducts() async {
+    List<ProductModel> product = [];
+    try {
+      http.Response response = await http.post(
+        Uri.parse(endPonit),
+        body: {'action': 'getWomenClothesProducts'},
+      );
+      if (response.statusCode == 200) {
+        final List data = jsonDecode(response.body);
+        product = data.map((e) => ProductModel.fromJson(e)).toList();
+      } else {
+        print(response.body);
+      }
+    } on SocketException {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("No internet"),
+        ),
+      );
+    } catch (e) {
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+        ),
+      );
+    }
+    return product;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -22,7 +22,7 @@ class _My_Womens_Clothes_ScreenState extends State<My_Womens_Clothes_Screen> {
     try {
       http.Response response = await http.post(
         Uri.parse(endPonit),
-        body: {'action': 'getProducts'},
+        body: {'action': 'getWomenClothesProducts'},
       );
       if (response.statusCode == 200) {
         final List data = jsonDecode(response.body);

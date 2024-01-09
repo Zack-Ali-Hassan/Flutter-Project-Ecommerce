@@ -227,11 +227,11 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
         child: Material(
           color: Colors.red,
           borderRadius: BorderRadius.circular(
-            20.0,
+            10.0,
           ),
           child: InkWell(
             borderRadius: BorderRadius.circular(
-              20.0,
+              10.0,
             ),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (_) {
@@ -240,7 +240,7 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
             },
             child: Container(
               width: double.infinity,
-              height: 50,
+              height: 48,
               alignment: Alignment.center,
               decoration: BoxDecoration(),
               child: Text(

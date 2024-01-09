@@ -42,30 +42,6 @@ class _My_First_ScreenState extends State<My_First_Screen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      // Column(
-                      //   children: [
-                      //     Container(
-                      //       width: 80,
-                      //       height: 80,
-                      //       decoration: BoxDecoration(
-                      //           // image: DecorationImage(
-                      //           //   image: AssetImage("assets/images/logo11.png"),
-                      //           // ),
-                      //           ),
-                      //     ),
-                      //     Transform.translate(
-                      //       offset: (Offset(0, -20)),
-                      //       child: Text(
-                      //         "Photography",
-                      //         style: TextStyle(
-                      //           color: Colors.black,
-                      //           fontSize: 18,
-                      //           fontWeight: FontWeight.w700,
-                      //         ),
-                      //       ),
-                      //     )
-                      //   ],
-                      // ),
                       const SizedBox(
                         height: 20.0,
                       ),
@@ -135,7 +111,7 @@ class _My_First_ScreenState extends State<My_First_Screen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (_) {
-                                    return My_Signin_Screen();
+                                    return BottomBar();
                                   },
                                 ),
                               );
@@ -155,6 +131,57 @@ class _My_First_ScreenState extends State<My_First_Screen> {
                                 alignment: Alignment.center,
                                 child: Text(
                                   "GET START",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                        ),
+                        child: Material(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(
+                            10.0,
+                          ),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) {
+                                    return My_Signin_Screen();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.white,
+                                ),
+                                borderRadius: BorderRadius.circular(
+                                  10.0,
+                                ),
+                              ),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Sign in/register",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
