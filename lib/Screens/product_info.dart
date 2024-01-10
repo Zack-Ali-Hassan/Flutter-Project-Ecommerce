@@ -84,55 +84,59 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: 120,
-                            height: 40,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: DropdownButton<String>(
-                                isExpanded: true,
-                                value: selectedSize,
-                                onChanged: (String? newValue) {
-                                  if (newValue != null) {
-                                    selectedSize = newValue;
-                                  }
-                                },
-                                items: size.map((String value) {
-                                  return DropdownMenuItem<String>(
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
+                          Expanded(
+                            child: Container(
+                              width: 120,
+                              height: 40,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: DropdownButton<String>(
+                                  isExpanded: true,
+                                  value: selectedSize,
+                                  onChanged: (String? newValue) {
+                                    if (newValue != null) {
+                                      selectedSize = newValue;
+                                    }
+                                  },
+                                  items: size.map((String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            width: 120,
-                            height: 40,
-                            // decoration: BoxDecoration(
-                            //   borderRadius: BorderRadius.circular(
-                            //     10,
-                            //   ),
-                            //   border: Border.all(
-                            //     color: Colors.red,
-                            //   ),
-                            // ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: DropdownButton<String>(
-                                isExpanded: true,
-                                value: selectedColor,
-                                onChanged: (String? newValue) {
-                                  if (newValue != null) {
-                                    selectedColor = newValue;
-                                  }
-                                },
-                                items: colors.map((String value) {
-                                  return DropdownMenuItem<String>(
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
+                          Expanded(
+                            child: Container(
+                              width: 120,
+                              height: 40,
+                              // decoration: BoxDecoration(
+                              //   borderRadius: BorderRadius.circular(
+                              //     10,
+                              //   ),
+                              //   border: Border.all(
+                              //     color: Colors.red,
+                              //   ),
+                              // ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: DropdownButton<String>(
+                                  isExpanded: true,
+                                  value: selectedColor,
+                                  onChanged: (String? newValue) {
+                                    if (newValue != null) {
+                                      selectedColor = newValue;
+                                    }
+                                  },
+                                  items: colors.map((String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
+                                ),
                               ),
                             ),
                           ),
@@ -188,7 +192,7 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                               "\$ " + widget.product.price,
                               style: TextStyle(
                                 fontSize: 22,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w500,
                                 color: Colors.red,
                               ),
                             ),
@@ -198,13 +202,11 @@ class _My_Product_Info_ScreenState extends State<My_Product_Info_Screen> {
                       const SizedBox(
                         height: 10.0,
                       ),
-                      Expanded(
-                        child: Text(
-                          widget.product.description,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey[800],
-                          ),
+                      Text(
+                        widget.product.description,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey[800],
                         ),
                       ),
                     ],

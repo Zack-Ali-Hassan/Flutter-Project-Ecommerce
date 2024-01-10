@@ -1,6 +1,11 @@
 import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'dart:io';
+import 'package:http/http.dart' as http;
+
+import '../Models/model.dart';
 
 class My_Kids_Clothes_Screen extends StatefulWidget {
   const My_Kids_Clothes_Screen({super.key});
@@ -10,6 +15,37 @@ class My_Kids_Clothes_Screen extends StatefulWidget {
 }
 
 class _My_Kids_Clothes_ScreenState extends State<My_Kids_Clothes_Screen> {
+  final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
+  Future<List<ProductModel>> getProducts() async {
+    List<ProductModel> product = [];
+    try {
+      http.Response response = await http.post(
+        Uri.parse(endPonit),
+        body: {'action': 'getKidsClothesProducts'},
+      );
+      if (response.statusCode == 200) {
+        final List data = jsonDecode(response.body);
+        product = data.map((e) => ProductModel.fromJson(e)).toList();
+      } else {
+        print(response.body);
+      }
+    } on SocketException {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("No internet"),
+        ),
+      );
+    } catch (e) {
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+        ),
+      );
+    }
+    return product;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -158,20 +194,43 @@ class _My_Kids_Clothes_ScreenState extends State<My_Kids_Clothes_Screen> {
                     const SizedBox(
                       height: 27.0,
                     ),
-                    GridView.builder(
-                      cacheExtent: 280,
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 20,
-                        crossAxisSpacing: 15,
-                        mainAxisExtent: 300,
-                      ),
-                      itemCount: 4,
-                      itemBuilder: (context, index) {
-                        return My_Kids_Clothes_Widget();
+                    FutureBuilder(
+                      future: getProducts(),
+                      builder: (context, snapshot) {
+                        switch (snapshot.connectionState) {
+                          case ConnectionState.waiting:
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          default:
+                            if (snapshot.data != null) {
+                              List<ProductModel> data = snapshot.data!;
+                              return GridView.builder(
+                                cacheExtent: 280,
+                                shrinkWrap: true,
+
+                                physics: NeverScrollableScrollPhysics(),
+                                // mainAxisAlignment: MainAxisAlignment.start,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  mainAxisSpacing: 20,
+                                  crossAxisSpacing: 15,
+                                  mainAxisExtent: 300,
+                                ),
+                                itemCount: data.length,
+                                itemBuilder: (context, index) {
+                                  return My_Kids_Clothes_Widget(
+                                    product: data[index],
+                                  );
+                                },
+                              );
+                            } else {
+                              return Center(
+                                child: Text("No Data Found..."),
+                              );
+                            }
+                        }
                       },
                     ),
                   ],
