@@ -1,9 +1,11 @@
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 import 'package:flutter/material.dart';
 
-class My_Discount_Products_Screen extends StatefulWidget {
-  const My_Discount_Products_Screen({super.key});
+import '../Models/model.dart';
 
+class My_Discount_Products_Screen extends StatefulWidget {
+  const My_Discount_Products_Screen({super.key, required this.product});
+  final ProductModel product;
   @override
   State<My_Discount_Products_Screen> createState() =>
       _My_Discount_Products_ScreenState();
@@ -60,7 +62,9 @@ class _My_Discount_Products_ScreenState
           ),
           itemCount: 12,
           itemBuilder: (context, index) {
-            return My_Discount_Products_Widget();
+            return My_Discount_Products_Widget(
+              product: widget.product,
+            );
           },
         ),
       ),

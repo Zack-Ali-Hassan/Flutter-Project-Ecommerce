@@ -10,6 +10,8 @@ class ProductModel {
       color,
       price,
       date;
+
+  var isEmpty;
   // late double price;
   // late DateTime date;
   ProductModel.fromJson(Map<dynamic, dynamic> json) {

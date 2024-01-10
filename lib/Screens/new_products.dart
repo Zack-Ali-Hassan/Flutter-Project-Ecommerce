@@ -1,9 +1,11 @@
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 import 'package:flutter/material.dart';
 
-class My_New_Products_Screen extends StatefulWidget {
-  const My_New_Products_Screen({super.key});
+import '../Models/model.dart';
 
+class My_New_Products_Screen extends StatefulWidget {
+  const My_New_Products_Screen({super.key, required this.product});
+  final List<ProductModel> product;
   @override
   State<My_New_Products_Screen> createState() => _My_New_Products_ScreenState();
 }
@@ -44,24 +46,25 @@ class _My_New_Products_ScreenState extends State<My_New_Products_Screen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 10.0,
-          horizontal: 20.0,
-        ),
-        child: GridView.builder(
-          // mainAxisAlignment: MainAxisAlignment.start,
-
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 10,
+          padding: const EdgeInsets.symmetric(
+            vertical: 10.0,
+            horizontal: 20.0,
           ),
-          itemCount: 12,
-          itemBuilder: (context, index) {
-            return New_Products_Screen_Widget();
-          },
-        ),
-      ),
+          child: GridView.builder(
+            // mainAxisAlignment: MainAxisAlignment.start,
+
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 20,
+              crossAxisSpacing: 10,
+            ),
+            itemCount: widget.product.length,
+            itemBuilder: (context, index) {
+              return New_Products_Screen_Widget(
+                product: widget.product[index],
+              );
+            },
+          )),
     );
   }
 }

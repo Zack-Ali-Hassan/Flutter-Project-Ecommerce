@@ -2,9 +2,11 @@ import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-class Sales_Discount_Widget extends StatefulWidget {
-  const Sales_Discount_Widget({super.key});
+import '../Models/model.dart';
 
+class Sales_Discount_Widget extends StatefulWidget {
+  const Sales_Discount_Widget({super.key, required this.product});
+  final ProductModel product;
   @override
   State<Sales_Discount_Widget> createState() => _Sales_Discount_WidgetState();
 }
@@ -19,7 +21,9 @@ class _Sales_Discount_WidgetState extends State<Sales_Discount_Widget> {
         borderRadius: BorderRadius.circular(20.0),
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return My_Discount_Product_Info_Screen();
+            return My_Discount_Product_Info_Screen(
+              product: widget.product,
+            );
           }));
         },
         child: Container(
@@ -39,8 +43,7 @@ class _Sales_Discount_WidgetState extends State<Sales_Discount_Widget> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
-                          "https://ae01.alicdn.com/kf/Sc752a9aa2e484ecd8c47efceed88fd9bl.jpg_640x640Q90.jpg_.webp")),
+                      image: NetworkImage(widget.product.image)),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: Column(
@@ -113,7 +116,7 @@ class _Sales_Discount_WidgetState extends State<Sales_Discount_Widget> {
                   left: 10.0,
                 ),
                 child: Text(
-                  "Evening Dress",
+                  widget.product.name,
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w600,
@@ -126,7 +129,7 @@ class _Sales_Discount_WidgetState extends State<Sales_Discount_Widget> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "15\$",
+                        text: widget.product.price + "\$",
                         style: TextStyle(
                           color: Colors.black,
                         ),

@@ -2,9 +2,11 @@ import 'package:e_commerce_project_app/Screens/product_info.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-class Sales_New_Screen extends StatefulWidget {
-  const Sales_New_Screen({super.key});
+import '../Models/model.dart';
 
+class Sales_New_Screen extends StatefulWidget {
+  const Sales_New_Screen({super.key, required this.product});
+  final ProductModel product;
   @override
   State<Sales_New_Screen> createState() => _Sales_New_ScreenState();
 }
@@ -18,9 +20,11 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
       child: InkWell(
         borderRadius: BorderRadius.circular(20.0),
         onTap: () {
-          // Navigator.push(context, MaterialPageRoute(builder: (_) {
-          //   return My_Product_Info_Screen();
-          // }));
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return My_Product_Info_Screen(
+              product: widget.product,
+            );
+          }));
         },
         child: Container(
           width: 150,
@@ -39,8 +43,7 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                        "https://cdn.media.amplience.net/i/truworths/prod3096388_1?fmt=auto&\$pdp-main-mobile\$"),
+                    image: NetworkImage(widget.product.image),
                   ),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
@@ -114,7 +117,7 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
                   left: 10.0,
                 ),
                 child: Text(
-                  "Evening Dress",
+                  widget.product.name,
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w600,
@@ -127,10 +130,10 @@ class _Sales_New_ScreenState extends State<Sales_New_Screen> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "15\$",
+                        text: widget.product.price + "\$",
                         style: TextStyle(
                           color: Colors.red,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],

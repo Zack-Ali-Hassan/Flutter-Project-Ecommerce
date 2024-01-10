@@ -7,6 +7,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import '../Models/model.dart';
+
 class My_Home_Screen extends StatefulWidget {
   const My_Home_Screen({super.key});
   @override
@@ -14,13 +15,14 @@ class My_Home_Screen extends StatefulWidget {
 }
 
 class _My_Home_ScreenState extends State<My_Home_Screen> {
-final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
+  final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
+  List<ProductModel> product_data = [];
   Future<List<ProductModel>> getProducts() async {
     List<ProductModel> product = [];
     try {
       http.Response response = await http.post(
         Uri.parse(endPonit),
-        body: {'action': 'getMenShoesProducts'},
+        body: {'action': 'getNewProducts'},
       );
       if (response.statusCode == 200) {
         final List data = jsonDecode(response.body);
@@ -44,6 +46,7 @@ final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
     }
     return product;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -182,7 +185,9 @@ final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
                               onTap: () {
                                 Navigator.push(context,
                                     MaterialPageRoute(builder: (_) {
-                                  return My_Fashion_sale_check();
+                                  return My_Fashion_sale_check(
+                                    product: product_data,
+                                  );
                                 }));
                               },
                               child: Container(
@@ -241,10 +246,14 @@ final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                            return My_New_Products_Screen();
-                          }));
+                          product_data.isEmpty
+                              ? null
+                              : Navigator.push(context,
+                                  MaterialPageRoute(builder: (_) {
+                                  return My_New_Products_Screen(
+                                    product: product_data,
+                                  );
+                                }));
                         },
                         child: Text(
                           "view all",
@@ -258,21 +267,42 @@ final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
                   const SizedBox(
                     height: 18.0,
                   ),
-                  SizedBox(
-                    height: 290,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, int index) {
-                        return Sales_New_Screen();
-                      },
-                      separatorBuilder: (context, int index) {
-                        return const SizedBox(
-                          width: 15.0,
-                        );
-                      },
-                      itemCount: 5,
-                    ),
-                  )
+                  FutureBuilder(
+                    future: getProducts(),
+                    builder: (context, snapshot) {
+                      switch (snapshot.connectionState) {
+                        case ConnectionState.waiting:
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        default:
+                          if (snapshot.data != null) {
+                            product_data = snapshot.data!;
+                            return SizedBox(
+                              height: 290,
+                              child: ListView.separated(
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, int index) {
+                                  return Sales_New_Screen(
+                                    product: product_data[index],
+                                  );
+                                },
+                                separatorBuilder: (context, int index) {
+                                  return const SizedBox(
+                                    width: 15.0,
+                                  );
+                                },
+                                itemCount: product_data.length,
+                              ),
+                            );
+                          } else {
+                            return Center(
+                              child: Text("No Data Found..."),
+                            );
+                          }
+                      }
+                    },
+                  ),
                 ],
               ),
             ),
