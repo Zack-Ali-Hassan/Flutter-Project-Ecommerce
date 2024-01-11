@@ -9,6 +9,7 @@ class ProductModel {
       size,
       color,
       price,
+      discount,
       date;
 
   var isEmpty;
@@ -24,6 +25,7 @@ class ProductModel {
       size = json['size'];
       color = json['color'];
       price = json['price'];
+      discount = json['discount'];
       date = json['date'];
     }
   }

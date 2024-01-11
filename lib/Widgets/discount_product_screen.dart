@@ -138,7 +138,7 @@ class _My_Discount_Products_WidgetState
                               ),
                             ),
                             TextSpan(
-                              text: "  12\$",
+                              text: "  " + widget.product.discount + "\$",
                               style: TextStyle(
                                 color: Colors.red,
                                 fontWeight: FontWeight.w600,

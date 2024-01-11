@@ -1,5 +1,8 @@
 import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:io';
 
 class My_Signin_Screen extends StatefulWidget {
   const My_Signin_Screen({super.key});
@@ -9,6 +12,48 @@ class My_Signin_Screen extends StatefulWidget {
 }
 
 class _My_Signin_ScreenState extends State<My_Signin_Screen> {
+  TextEditingController _name = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _mobile = TextEditingController();
+  TextEditingController _address = TextEditingController();
+  final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
+  Future registerCustomer() async {
+    try {
+      http.Response response = await http.post(
+        Uri.parse(endPonit),
+        body: {
+          'action': 'getDiscountProducts',
+          'customer_name': _name,
+          'email': _email,
+          'mobile': _mobile,
+          'address': _address,
+        },
+      );
+      if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Register Successfully"),
+          ),
+        );
+      } else {
+        print(response.body);
+      }
+    } on SocketException {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("No internet"),
+        ),
+      );
+    } catch (e) {
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +106,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                         borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
+                        controller: _name,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black),
@@ -92,6 +138,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                         borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
+                        controller: _email,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black),
@@ -123,6 +170,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                         borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
+                        controller: _mobile,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black),
@@ -154,6 +202,7 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                         borderRadius: BorderRadius.circular(7.0),
                       ),
                       child: TextFormField(
+                        controller: _address,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black),
@@ -244,10 +293,11 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                           10.0,
                         ),
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                            return BottomBar();
-                          }));
+                          registerCustomer();
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (_) {
+                          //   return BottomBar();
+                          // }));
                         },
                         child: Container(
                           width: double.infinity,

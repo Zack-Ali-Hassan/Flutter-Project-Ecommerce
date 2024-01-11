@@ -46,12 +46,13 @@ class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
     }
     return product;
   }
-   Future<List<ProductModel>> getProductsDiscount() async {
+
+  Future<List<ProductModel>> getProductsDiscount() async {
     List<ProductModel> product = [];
     try {
       http.Response response = await http.post(
         Uri.parse(endPonit),
-        body: {'action': 'getNewProducts'},
+        body: {'action': 'getDiscountProducts'},
       );
       if (response.statusCode == 200) {
         final List data = jsonDecode(response.body);
@@ -166,13 +167,13 @@ class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
                       ),
                       TextButton(
                         onPressed: () {
-                          //  product_data_discount.isEmpty
-                          //     ? null
-                          //     :
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (_) {
-                          //   return My_Discount_Products_Screen(product: widget.p,);
-                          // }));
+                           product_data_discount.isEmpty
+                              ? null
+                              :
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return My_Discount_Products_Screen();
+                          }));
                         },
                         child: Text(
                           "view all",
@@ -202,7 +203,9 @@ class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
                               child: ListView.separated(
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, int index) {
-                                  return Sales_Discount_Widget( product: product_data_discount[index],);
+                                  return Sales_Discount_Widget(
+                                    product: product_data_discount[index],
+                                  );
                                 },
                                 separatorBuilder: (context, int index) {
                                   return const SizedBox(

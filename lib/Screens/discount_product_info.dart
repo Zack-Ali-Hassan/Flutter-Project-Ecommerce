@@ -6,7 +6,7 @@ import '../Models/model.dart';
 
 class My_Discount_Product_Info_Screen extends StatefulWidget {
   const My_Discount_Product_Info_Screen({super.key, required this.product});
-final ProductModel product;
+  final ProductModel product;
   @override
   State<My_Discount_Product_Info_Screen> createState() =>
       _My_Discount_Product_Info_ScreenState();
@@ -64,8 +64,7 @@ class _My_Discount_Product_Info_ScreenState
                 decoration: BoxDecoration(
                   color: Colors.white,
                   image: DecorationImage(
-                    image: NetworkImage(
-                        widget.product.image),
+                    image: NetworkImage(widget.product.image),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -89,14 +88,7 @@ class _My_Discount_Product_Info_ScreenState
                           Container(
                             width: 120,
                             height: 40,
-                            // decoration: BoxDecoration(
-                            //   borderRadius: BorderRadius.circular(
-                            //     10,
-                            //   ),
-                            //   border: Border.all(
-                            //     color: Colors.red,
-                            //   ),
-                            // ),
+                            
                             child: Padding(
                               padding: const EdgeInsets.only(left: 8.0),
                               child: DropdownButton<String>(
@@ -183,42 +175,43 @@ class _My_Discount_Product_Info_ScreenState
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            children: [
-                              Text(
-                                widget.product.name,
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 10.0),
+                          Expanded(
                             child: Row(
                               children: [
-                                Text(
-                                  "\$ " + "20",
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  "\$ " + "10",
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.red,
+                                Expanded(
+                                  child: Text(
+                                    widget.product.name,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "\$" + widget.product.price,
+                                style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5.0,
+                              ),
+                              Text(
+                                "\$" + widget.product.discount,
+                                style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

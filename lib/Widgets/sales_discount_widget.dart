@@ -135,10 +135,10 @@ class _Sales_Discount_WidgetState extends State<Sales_Discount_Widget> {
                         ),
                       ),
                       TextSpan(
-                        text: "  12\$",
+                        text: "   " + widget.product.discount + "\$",
                         style: TextStyle(
                           color: Colors.red,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],
