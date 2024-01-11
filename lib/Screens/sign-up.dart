@@ -22,11 +22,11 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
       http.Response response = await http.post(
         Uri.parse(endPonit),
         body: {
-          'action': 'getDiscountProducts',
-          'customer_name': _name,
-          'email': _email,
-          'mobile': _mobile,
-          'address': _address,
+          'action': 'register_customer',
+          'name': _name.text,
+          'email': _email.text,
+          'mobile': _mobile.text,
+          'address': _address.text,
         },
       );
       if (response.statusCode == 200) {
