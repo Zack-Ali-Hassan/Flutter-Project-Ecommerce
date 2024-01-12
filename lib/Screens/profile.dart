@@ -1,5 +1,6 @@
 import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_session_manager/flutter_session_manager.dart';
 
 class My_Profile_Screen extends StatefulWidget {
   const My_Profile_Screen({super.key});
@@ -74,14 +75,30 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
                         ),
                       ),
                     ),
-                    title: Text(
-                      "Ahmed mohamed Hassan",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    title: FutureBuilder(
+                      future: SessionManager().get("name"),
+                      builder: (context, snapshot) {
+                        print(snapshot.data);
+                        return Text(
+                          snapshot.data != ''
+                              ? snapshot.data.toString()
+                              : "Loading...",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        );
+                      },
                     ),
-                    subtitle: Text("ahmedmohamed@gmail.com"),
+                    subtitle: FutureBuilder(
+                      future: SessionManager().get("email"),
+                      builder: (context, snapshot) {
+                        print(snapshot.data);
+                        return Text(snapshot.data != ''
+                            ? snapshot.data.toString()
+                            : "Loading...");
+                      },
+                    ),
                   ),
                   const SizedBox(
                     height: 15.0,

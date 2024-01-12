@@ -31,11 +31,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_session_manager: ^1.0.3
   flutter_zoom_drawer: ^3.1.1
   font_awesome_flutter: ^10.6.0
   font_awesome_icon_class: ^0.0.6
   http: ^1.1.0
   like_button: ^2.0.5
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1

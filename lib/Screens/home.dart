@@ -1,6 +1,7 @@
 import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:e_commerce_project_app/Widgets/widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_session_manager/flutter_session_manager.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -73,12 +74,20 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                   const SizedBox(
                     height: 15.0,
                   ),
-                  Text(
-                    "Ahmed Mukhtaar",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 17,
-                    ),
+                  FutureBuilder(
+                    future: SessionManager().get("name"),
+                    builder: (context, snapshot) {
+                      print(snapshot.data);
+                      return Text(
+                        snapshot.data != ''
+                            ? snapshot.data.toString()
+                            : "Loading...",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 17,
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -102,6 +111,10 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                         30.0,
                       ),
                       onTap: () {
+                        SessionManager().set("name", '');
+                        SessionManager().set("mobile", '');
+                        SessionManager().set("email", '');
+                        SessionManager().set("address", '');
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
                           return My_First_Screen();
                         }));

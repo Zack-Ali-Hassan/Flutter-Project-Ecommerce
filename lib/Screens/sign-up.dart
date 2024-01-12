@@ -1,5 +1,6 @@
 import 'package:e_commerce_project_app/Screens/screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_session_manager/flutter_session_manager.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 
@@ -12,7 +13,7 @@ extension StringEx on String {
 
 extension StringMobile on String {
   bool get isNotMobile {
-    return !this.startsWith("61");
+    return !(this.startsWith("61") && this.length == 9);
   }
 }
 
@@ -50,14 +51,22 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
         },
       );
       print(response.statusCode);
-      print("The response body is : " + response.body);
-      if (response.statusCode == 200) {
+      print(response.body);
+      if (response.body.contains("Register successfully")) {
+        var sessionManager = SessionManager();
+        await sessionManager.set("name", _name.text);
+        await sessionManager.set("email", _email.text);
+        await sessionManager.set("mobile", _mobile.text);
+        await sessionManager.set("address", _address.text);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text("Register Successfully"),
           ),
         );
-        clear();
+        // clear();
+        Navigator.push(context, MaterialPageRoute(builder: (_) {
+          return BottomBar();
+        }));
         // Fluttertoast.showToast(
         //     msg: "Register Successfully",
         //     toastLength: Toast.LENGTH_SHORT,
@@ -386,10 +395,6 @@ class _My_Signin_ScreenState extends State<My_Signin_Screen> {
                             if (_formkey.currentState!.validate()) {
                               registerCustomer();
                             }
-                            // Navigator.push(context,
-                            //     MaterialPageRoute(builder: (_) {
-                            //   return BottomBar();
-                            // }));
                           },
                           child: Container(
                             width: double.infinity,
