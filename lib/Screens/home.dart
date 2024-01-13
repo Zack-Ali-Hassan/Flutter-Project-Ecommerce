@@ -79,7 +79,7 @@ class _My_Home_ScreenState extends State<My_Home_Screen> {
                     builder: (context, snapshot) {
                       print(snapshot.data);
                       return Text(
-                        snapshot.data != ''
+                        snapshot.data != null
                             ? snapshot.data.toString()
                             : "Loading...",
                         style: TextStyle(

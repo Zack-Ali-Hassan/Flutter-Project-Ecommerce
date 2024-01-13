@@ -80,7 +80,7 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
                       builder: (context, snapshot) {
                         print(snapshot.data);
                         return Text(
-                          snapshot.data != ''
+                          snapshot.data != null
                               ? snapshot.data.toString()
                               : "Loading...",
                           style: TextStyle(
@@ -94,7 +94,7 @@ class _My_Profile_ScreenState extends State<My_Profile_Screen> {
                       future: SessionManager().get("email"),
                       builder: (context, snapshot) {
                         print(snapshot.data);
-                        return Text(snapshot.data != ''
+                        return Text(snapshot.data != null
                             ? snapshot.data.toString()
                             : "Loading...");
                       },
