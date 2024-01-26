@@ -14,7 +14,7 @@ class My_Discount_Products_Screen extends StatefulWidget {
 
 class _My_Discount_Products_ScreenState
     extends State<My_Discount_Products_Screen> {
-  final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
+  final String endPonit = "http://192.168.125.69/dalab%20app/products.php";
   List<ProductModel> product_data_discount = [];
   Future<List<ProductModel>> getProductsDiscount() async {
     List<ProductModel> product = [];

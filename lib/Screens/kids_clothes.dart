@@ -15,7 +15,7 @@ class My_Kids_Clothes_Screen extends StatefulWidget {
 }
 
 class _My_Kids_Clothes_ScreenState extends State<My_Kids_Clothes_Screen> {
-  final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
+  final String endPonit = "http://192.168.125.69/dalab%20app/products.php";
   Future<List<ProductModel>> getProducts() async {
     List<ProductModel> product = [];
     try {

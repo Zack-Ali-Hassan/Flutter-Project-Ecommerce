@@ -14,7 +14,7 @@ class My_Fashion_sale_check extends StatefulWidget {
 }
 
 class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
-  final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
+  final String endPonit = "http://192.168.125.69/dalab%20app/products.php";
   List<ProductModel> product_data = [];
   List<ProductModel> product_data_discount = [];
   Future<List<ProductModel>> getProducts() async {
@@ -167,13 +167,12 @@ class _My_Fashion_sale_checkState extends State<My_Fashion_sale_check> {
                       ),
                       TextButton(
                         onPressed: () {
-                           product_data_discount.isEmpty
+                          product_data_discount.isEmpty
                               ? null
-                              :
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                            return My_Discount_Products_Screen();
-                          }));
+                              : Navigator.push(context,
+                                  MaterialPageRoute(builder: (_) {
+                                  return My_Discount_Products_Screen();
+                                }));
                         },
                         child: Text(
                           "view all",

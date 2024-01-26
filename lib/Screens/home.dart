@@ -16,7 +16,7 @@ class My_Home_Screen extends StatefulWidget {
 }
 
 class _My_Home_ScreenState extends State<My_Home_Screen> {
-  final String endPonit = "http://192.168.17.69/dalab%20app/products.php";
+  final String endPonit = "http://192.168.125.69/dalab%20app/products.php";
   List<ProductModel> product_data = [];
   Future<List<ProductModel>> getProducts() async {
     List<ProductModel> product = [];
